@@ -93,6 +93,7 @@ public class MessageFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         EditText txt_place = view.findViewById(R.id.txt_place);
+        txt_place.setHint(getArguments().getString("name"));
         Button btnEnviar = view.findViewById(R.id.btn_buscar);
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -79,7 +79,10 @@ public class SlideshowFragment extends Fragment {
                             Log.e(TAG, "onResponse: " + new Gson().toJson(response.code()));
                             Log.e(TAG, "onResponse: " + new Gson().toJson(response.body().getName()));
                             Toast.makeText(getContext(), "Bienvenido " + new Gson().toJson(response.body().getName()), Toast.LENGTH_LONG).show();
-                            Navigation.findNavController(view).navigate(R.id.nav_log_to_message);
+                            Bundle bundle = new Bundle();
+                            bundle.putString("name", new Gson().toJson(response.body().getName()));
+
+                            Navigation.findNavController(view).navigate(R.id.nav_log_to_message, bundle);
 
 
                         }else{
